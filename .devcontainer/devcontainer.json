@@ -1,0 +1,24 @@
+{
+    "name": "Zephyr SDK",
+    "image": "zephyr-devcontainer",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "bash",
+                        "icon": "terminal-bash"
+                    }
+                }
+            }
+        }
+    },
+    "containerEnv": {"ZEPHYR_BASE": "${containerWorkspaceFolder}/zephyr"},
+    "runArgs": [
+        "--device=/dev/"
+    ],
+    "mounts": [
+        "source=/dev/,target=/dev/,type=bind"
+    ]
+}
