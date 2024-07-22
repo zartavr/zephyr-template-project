@@ -11,10 +11,31 @@
                         "icon": "terminal-bash"
                     }
                 }
-            }
+            },
+            "extensions": [
+                // Build and Debug
+                "spmeesseman.vscode-taskexplorer",
+                "marus25.cortex-debug",
+                // Formatter + linter
+                "llvm-vs-code-extensions.vscode-clangd",
+                "xaver.clang-format",
+                "twxs.cmake",
+                // Related tools
+                "mhutchie.git-graph",
+                "cschlosser.doxdocgen",
+                "IBM.output-colorizer",
+                // Config files linters
+                "luveti.kconfig",
+                "plorefice.devicetree",
+                // Spell chechers
+                "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-russian"
+            ]
         }
     },
-    "containerEnv": {"ZEPHYR_BASE": "${containerWorkspaceFolder}/zephyr"},
+    "containerEnv": {
+        "ZEPHYR_BASE": "${containerWorkspaceFolder}/zephyr"
+    },
     "runArgs": [
         "--device=/dev/"
     ],

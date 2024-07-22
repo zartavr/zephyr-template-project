@@ -1,0 +1,10 @@
+{
+    "search.exclude": {
+        "**/modules/*": true
+    },
+    "files.associations": {
+        "*.overlay": "dts",
+        "*.dtsi": "dts",
+      },
+      "files.insertFinalNewline": true    
+}

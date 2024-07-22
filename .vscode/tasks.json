@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "[West] Init Zephyr",
+            "type": "shell",
+            "command": "west update"
+        },
+        {
+            "label": "[West] Build",
+            "type": "shell",
+            "command": "west build"
+        },
+        {
+            "label": "[West] Clean & Build",
+            "type": "shell",
+            "command": "west build -p"
+        },
+        {
+            "label": "[West] Run kernel menuconfig",
+            "type": "shell",
+            "command": "west build -t menuconfig"
+        },
+        {
+            "label": "[West] Run kernel guiconfig",
+            "type": "shell",
+            "command": "west build -t guiconfig"
+        },
+        {
+            "label": "Flash",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/stlink.cfg",
+                "-f",
+                "target/stm32f4x.cfg",
+                "-c",
+                "program ./build/zephyr/zephyr.hex verify exit reset"
+            ],
+            "dependsOn": "Build",
+            "problemMatcher": []
+        }
+    ]
+}
