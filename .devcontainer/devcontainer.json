@@ -10,7 +10,16 @@
                         "path": "bash",
                         "icon": "terminal-bash"
                     }
-                }
+                },
+                "clangd.arguments": [
+                    "--compile-commands-dir=build",
+                    "-j=12",
+                    "--cross-file-rename",
+                    "--clang-tidy",
+                    "--background-index",
+                    "--query-driver=/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-*",
+                    "--pch-storage=memory"
+                ]
             },
             "extensions": [
                 // Build and Debug
