@@ -19,9 +19,9 @@ Copyright (c) 2024 STMicroelectronics.
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
-  <name>STM32F401</name>
-  <version>1.8</version>
-  <description>STM32F401</description>
+  <name>STM32F411</name>
+  <version>1.9</version>
+  <description>STM32F411</description>
   <cpu>
     <name>CM4</name>
     <revision>r0p1</revision>
@@ -1191,9 +1191,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
+        <name>PVD</name>
+        <description>EXTI Line 16 interrupt / PVD through
+        EXTI</description>
+        <value>1</value>
+      </interrupt>
+      <interrupt>
         <name>TAMP_STAMP</name>
-        <description>Tamper and TimeStamp interrupts through the
-        EXTI line</description>
+        <description>Tamper and TimeStamp interrupts
+        through</description>
         <value>2</value>
       </interrupt>
       <interrupt>
@@ -2593,18 +2599,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-	  <interrupt>
-        <name>EXTI18_OTG_FS_WKUP</name>
-        <description>EXTI Line 18 interrupt / USBUSB On-The-Go FS Wakeup through EXTI line
-        interrupt</description>
-        <value>42</value>
-      </interrupt>
-      <interrupt>
-        <name>OTG_FS</name>
-        <description>USB On The Go FS global
-        interrupt</description>
-        <value>67</value>
-      </interrupt>
       <registers>
         <register>
           <name>FS_DCFG</name>
@@ -4438,6 +4432,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>OTG_FS_WKUP</name>
+        <description>USB On-The-Go FS Wakeup through EXTI line
+        interrupt</description>
+        <value>42</value>
+      </interrupt>
+      <interrupt>
+        <name>OTG_FS</name>
+        <description>USB On The Go FS global
+        interrupt</description>
+        <value>67</value>
+      </interrupt>
       <registers>
         <register>
           <name>FS_GOTGCTL</name>
@@ -7754,12 +7760,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-	  <interrupt>
-        <name>EXTI16_PVD</name>
-        <description>EXTI Line 16 interrupt /PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -8865,21 +8865,45 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>TIM11EN</name>
-              <description>TIM11 clock enable</description>
-              <bitOffset>18</bitOffset>
+              <name>TIM1EN</name>
+              <description>TIM1 clock enable</description>
+              <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>TIM10EN</name>
-              <description>TIM10 clock enable</description>
-              <bitOffset>17</bitOffset>
+              <name>USART1EN</name>
+              <description>USART1 clock enable</description>
+              <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>TIM9EN</name>
-              <description>TIM9 clock enable</description>
-              <bitOffset>16</bitOffset>
+              <name>USART6EN</name>
+              <description>USART6 clock enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADC1EN</name>
+              <description>ADC1 clock enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SDIOEN</name>
+              <description>SDIO clock enable</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPI1EN</name>
+              <description>SPI1 clock enable</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPI4EN</name>
+              <description>SPI4 clock enable</description>
+              <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -8890,39 +8914,21 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI1EN</name>
-              <description>SPI1 clock enable</description>
-              <bitOffset>12</bitOffset>
+              <name>TIM9EN</name>
+              <description>TIM9 clock enable</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SDIOEN</name>
-              <description>SDIO clock enable</description>
-              <bitOffset>11</bitOffset>
+              <name>TIM10EN</name>
+              <description>TIM10 clock enable</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>ADC1EN</name>
-              <description>ADC1 clock enable</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>USART6EN</name>
-              <description>USART6 clock enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>USART1EN</name>
-              <description>USART1 clock enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM1EN</name>
-              <description>TIM1 clock enable</description>
-              <bitOffset>0</bitOffset>
+              <name>TIM11EN</name>
+              <description>TIM11 clock enable</description>
+              <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -9142,59 +9148,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00075F33</resetValue>
           <fields>
             <field>
-              <name>TIM11LPEN</name>
-              <description>TIM11 clock enable during Sleep
+              <name>TIM1LPEN</name>
+              <description>TIM1 clock enable during Sleep
               mode</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM10LPEN</name>
-              <description>TIM10 clock enable during Sleep
-              mode</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM9LPEN</name>
-              <description>TIM9 clock enable during sleep
-              mode</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SYSCFGLPEN</name>
-              <description>System configuration controller clock
-              enable during Sleep mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI1LPEN</name>
-              <description>SPI 1 clock enable during Sleep
-              mode</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SDIOLPEN</name>
-              <description>SDIO clock enable during Sleep
-              mode</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADC1LPEN</name>
-              <description>ADC1 clock enable during Sleep
-              mode</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>USART6LPEN</name>
-              <description>USART6 clock enable during Sleep
-              mode</description>
-              <bitOffset>5</bitOffset>
+              <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -9205,10 +9162,66 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>TIM1LPEN</name>
-              <description>TIM1 clock enable during Sleep
+              <name>USART6LPEN</name>
+              <description>USART6 clock enable during Sleep
               mode</description>
-              <bitOffset>0</bitOffset>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADC1LPEN</name>
+              <description>ADC1 clock enable during Sleep
+              mode</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SDIOLPEN</name>
+              <description>SDIO clock enable during Sleep
+              mode</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPI1LPEN</name>
+              <description>SPI 1 clock enable during Sleep
+              mode</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPI4LPEN</name>
+              <description>SPI4 clock enable during Sleep
+              mode</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SYSCFGLPEN</name>
+              <description>System configuration controller clock
+              enable during Sleep mode</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>TIM9LPEN</name>
+              <description>TIM9 clock enable during sleep
+              mode</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>TIM10LPEN</name>
+              <description>TIM10 clock enable during Sleep
+              mode</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>TIM11LPEN</name>
+              <description>TIM11 clock enable during Sleep
+              mode</description>
+              <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -9435,14 +9448,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>EXTI22_RTC_WKUP</name>
-        <description>EXTI Line 22 interrupt /RTC Wakeup interrupt through the EXTI
-        line</description>
-        <value>3</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI17_RTC_Alarm</name>
-        <description>EXTI Line 17 interrupt / RTC Alarms (A and B) through EXTI line
+        <name>RTC_Alarm</name>
+        <description>RTC Alarms (A and B) through EXTI line
         interrupt</description>
         <value>41</value>
       </interrupt>
@@ -11864,17 +11871,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-	  <interrupt>
+      <interrupt>
         <name>TIM1_BRK_TIM9</name>
         <description>TIM1 Break interrupt and TIM9 global
         interrupt</description>
         <value>24</value>
       </interrupt>
-	  <interrupt>
+      <interrupt>
         <name>TIM1_UP_TIM10</name>
         <description>TIM1 Update interrupt and TIM10 global
         interrupt</description>
         <value>25</value>
+      </interrupt>
+      <interrupt>
+        <name>TIM1_UP_TIM10</name>
+        <description>TIM1 Update interrupt and TIM10 global
+        interrupt</description>
+        <value>25</value>
+      </interrupt>
+      <interrupt>
+        <name>TIM1_TRG_COM_TIM11</name>
+        <description>TIM1 Trigger and Commutation interrupts and
+        TIM11 global interrupt</description>
+        <value>26</value>
       </interrupt>
       <interrupt>
         <name>TIM1_TRG_COM_TIM11</name>
@@ -12976,7 +12995,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <offset>0x0</offset>
         <size>0x400</size>
         <usage>registers</usage>
-      </addressBlock>     
+      </addressBlock>
       <registers>
         <register>
           <name>CR1</name>
@@ -13604,12 +13623,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <offset>0x0</offset>
         <size>0x400</size>
         <usage>registers</usage>
-      </addressBlock> 
+      </addressBlock>
       <interrupt>
         <name>TIM2</name>
         <description>TIM2 global interrupt</description>
         <value>28</value>
-      </interrupt>	  
+      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -14551,6 +14570,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>TIM3 global interrupt</description>
         <value>29</value>
       </interrupt>
+      <interrupt>
+        <name>DMA2_Stream7</name>
+        <description>DMA2 Stream7 global interrupt</description>
+        <value>70</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -15463,7 +15487,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="TIM3">
       <name>TIM4</name>
       <baseAddress>0x40000800</baseAddress>
-	  <interrupt>
+      <interrupt>
         <name>TIM4</name>
         <description>TIM4 global interrupt</description>
         <value>30</value>
@@ -15479,7 +15503,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-	  <interrupt>
+      <interrupt>
         <name>TIM5</name>
         <description>TIM5 global interrupt</description>
         <value>50</value>
@@ -17317,7 +17341,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
-	  <interrupt>
+      <interrupt>
         <name>USART2</name>
         <description>USART2 global interrupt</description>
         <value>38</value>
@@ -17326,7 +17350,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART6</name>
       <baseAddress>0x40011400</baseAddress>
-	  <interrupt>
+      <interrupt>
         <name>USART6</name>
         <description>USART6 global interrupt</description>
         <value>71</value>
@@ -17342,6 +17366,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>WWDG</name>
+        <description>Window Watchdog interrupt</description>
+        <value>0</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -17431,11 +17460,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-	  <interrupt>
+      <interrupt>
         <name>DMA2_Stream0</name>
         <description>DMA2 Stream0 global interrupt</description>
         <value>56</value>
-      </interrupt>	
+      </interrupt>
       <interrupt>
         <name>DMA2_Stream1</name>
         <description>DMA2 Stream1 global interrupt</description>
@@ -17466,7 +17495,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>DMA2 Stream6 global interrupt</description>
         <value>69</value>
       </interrupt>
-      <interrupt>
+	  <interrupt>
         <name>DMA2_Stream7</name>
         <description>DMA2 Stream7 global interrupt</description>
         <value>70</value>
@@ -20110,10 +20139,16 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>DMA1</name>
       <baseAddress>0x40026000</baseAddress>
       <interrupt>
+        <name>RTC_WKUP</name>
+        <description>RTC Wakeup interrupt through the EXTI
+        line</description>
+        <value>3</value>
+      </interrupt>
+      <interrupt>
         <name>DMA1_Stream0</name>
         <description>DMA1 Stream0 global interrupt</description>
         <value>11</value>
-      </interrupt>	
+      </interrupt>
       <interrupt>
         <name>DMA1_Stream1</name>
         <description>DMA1 Stream1 global interrupt</description>
@@ -20148,7 +20183,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>DMA1_Stream7</name>
         <description>DMA1 Stream7 global interrupt</description>
         <value>47</value>
-      </interrupt>  
+      </interrupt>
     </peripheral>
     <peripheral>
       <name>GPIOH</name>
@@ -20159,7 +20194,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <offset>0x0</offset>
         <size>0x400</size>
         <usage>registers</usage>
-      </addressBlock>     
+      </addressBlock>
       <registers>
         <register>
           <name>MODER</name>
@@ -21412,17 +21447,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     </peripheral>
     <peripheral derivedFrom="GPIOH">
       <name>GPIOD</name>
-      <baseAddress>0X40020C00</baseAddress>      
+      <baseAddress>0X40020C00</baseAddress>
     </peripheral>
     <peripheral derivedFrom="GPIOH">
       <name>GPIOC</name>
       <baseAddress>0x40020800</baseAddress>
-      <interrupt>
-        <name>TIM1_UP_TIM10</name>
-        <description>TIM1 Update interrupt and TIM10 global
-        interrupt</description>
-        <value>25</value>
-      </interrupt>
     </peripheral>
     <peripheral>
       <name>GPIOB</name>
@@ -23945,7 +23974,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <offset>0x0</offset>
         <size>0x400</size>
         <usage>registers</usage>
-      </addressBlock> 
+      </addressBlock>
       <interrupt>
         <name>I2C3_EV</name>
         <description>I2C3 event interrupt</description>
@@ -23955,7 +23984,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>I2C3_ER</name>
         <description>I2C3 error interrupt</description>
         <value>73</value>
-      </interrupt>	  
+      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -24839,7 +24868,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="I2S2ext">
       <name>SPI1</name>
       <baseAddress>0x40013000</baseAddress>
-	  <interrupt>
+      <interrupt>
         <name>SPI1</name>
         <description>SPI1 global interrupt</description>
         <value>35</value>
@@ -24868,9 +24897,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <baseAddress>0x40013400</baseAddress>
       <interrupt>
         <name>SPI4</name>
-        <description>SPI4 global interrupt</description>
+        <description>SPI 4 global interrupt</description>
         <value>84</value>
       </interrupt>
-    </peripheral>    
+    </peripheral>
+    <peripheral derivedFrom="I2S2ext">
+      <name>SPI5</name>
+      <baseAddress>0x40015000</baseAddress>
+      <interrupt>
+        <name>SPI5</name>
+        <description>SPI 5 global interrupt</description>
+        <value>85</value>
+      </interrupt>
+    </peripheral>
   </peripherals>
 </device>

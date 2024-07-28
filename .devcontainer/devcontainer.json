@@ -50,5 +50,6 @@
     ],
     "mounts": [
         "source=/dev/,target=/dev/,type=bind"
-    ]
+    ],
+    "postStartCommand": "west zephyr-export"
 }

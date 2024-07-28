@@ -11,12 +11,16 @@
         {
             "label": "[West] Build",
             "type": "shell",
-            "command": "west build"
+            "command": "west build app",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+              }
         },
         {
             "label": "[West] Clean & Build",
             "type": "shell",
-            "command": "west build -p"
+            "command": "west build -p always app"
         },
         {
             "label": "[West] Run kernel menuconfig",

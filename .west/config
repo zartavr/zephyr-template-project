@@ -6,4 +6,5 @@ file = west.yml
 base = zephyr
 
 [build]
+board = stm32f411e_disco
 cmake-args = -DCMAKE_EXPORT_COMPILE_COMMANDS=ON

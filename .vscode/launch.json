@@ -11,12 +11,12 @@
             "interface": "swd",
             "showDevDebugOutput": "raw",
             "runToEntryPoint": "main",
-            "device": "STM32F401CC",
+            "device": "STM32F411VE",
             "configFiles": [
                 "interface/stlink.cfg",
                 "target/stm32f4x.cfg"
             ],
-            "svdFile": "${workspaceRoot}/tools/STM32F401.svd",
+            "svdFile": "${workspaceRoot}/tools/STM32F411.svd",
             "toolchainPrefix": "arm-zephyr-eabi",
         }
     ]
